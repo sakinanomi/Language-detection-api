@@ -26,7 +26,7 @@ or {"text": "klement gottwaldi surnukeha palsameeriti ning paigutati mausoleumi 
 - Now send using the given button.
 - The predicted language should be visible in the sections below
 
-
+![](image.png)
 
 ##### To work on
 
