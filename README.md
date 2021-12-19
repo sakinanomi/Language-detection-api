@@ -2,7 +2,7 @@
 This is for college mini project.
 The project is a langugae detection project that will predict the languagee of the given input string
 
-The trained ML model is taken from <link><br>
+The trained ML model is taken from https://github.com/tanvi355/project <br>
 - The model is serialized and deserialized using pickle
 - The API of the model is created using Flask
 - Testing can be done using postman
