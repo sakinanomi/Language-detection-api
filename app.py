@@ -32,7 +32,8 @@ def check():
     first_key = list(data.keys())[0]
 
 
-    text = data.get(first_key,None)
+    print(first_key)
+    
     if text is None:
         return jsonify({"message":"text not found"})
     else:
