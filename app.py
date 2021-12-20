@@ -35,14 +35,7 @@ def check():
     print(first_key)
     print("The datatype is",type(first_key))
 
-    if text is None:
-        return jsonify({"message":"text not found"})
-    else:
-
-        text=preprocess(text)
-        text=[text]
-        ans=pred(text)
-        return jsonify({"predicted ":ans})
+    return 'Hello'
 
 @app.route('/', methods=['GET'])
 def index():
