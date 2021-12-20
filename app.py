@@ -43,5 +43,5 @@ def index():
 
 
 if __name__ == '__main__':
-    port = 12345
-    app.run(port=port,debug=True)
+
+    app.run(debug=True)
