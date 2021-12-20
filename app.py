@@ -27,10 +27,9 @@ CORS(app)
 
 @app.route('/predict', methods=['POST'])
 def check():
-    data = (request.data)
-    print('The data is ',type(data),data)
-    text = data['text']
-    print('The text is ',type(text),text)
+    data = json.loads(request.data)
+    
+    text = data.get("text",None)
     if text is None:
         return jsonify({"message":"text not found"})
     else:
