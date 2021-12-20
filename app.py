@@ -27,15 +27,18 @@ CORS(app)
 
 @app.route('/predict', methods=['POST'])
 def check():
-    data = (request.form)
-    print('The data is' ,data)
-    first_key = list(data.keys())[0]
+    data = (request.data)
+    print('The data is ',type(data),data)
+    text = data['text']
+    print('The text is ',type(text),text)
+    if text is None:
+        return jsonify({"message":"text not found"})
+    else:
 
-
-    print(first_key)
-    print("The datatype is",type(first_key))
-
-    return 'Hello'
+        text=preprocess(text)
+        text=[text]
+        ans=pred(text)
+        return jsonify({"predicted ":ans})
 
 @app.route('/', methods=['GET'])
 def index():
