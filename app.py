@@ -1,5 +1,6 @@
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
+from flask_cors import CORS
 
 # load the model
 model = pickle.load(open('finalized_model.sav', 'rb'))
@@ -22,6 +23,7 @@ from flask import Flask,request, jsonify
 import json
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/predict', methods=['POST'])
 def check():
