@@ -33,7 +33,7 @@ def check():
 
 
     print(first_key)
-    printf("The datatype is",type(first_key))
+    print("The datatype is",type(first_key))
 
     if text is None:
         return jsonify({"message":"text not found"})
