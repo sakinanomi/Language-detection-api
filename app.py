@@ -25,17 +25,16 @@ app = Flask(__name__)
 
 @app.route('/predict', methods=['POST'])
 def check():
-    data = json.loads(request.data)
+    data = (request.form)
     text = data.get("text",None)
     if text is None:
         return jsonify({"message":"text not found"})
     else:
-        t=data['text']
-        t=preprocess(t)
-        t=[t]
-        ans=pred(t)
-        return jsonify({"predicted ":ans})
 
+        text=preprocess(text)
+        text=[text]
+        ans=pred(text)
+        return jsonify({"predicted ":ans})
 
 @app.route('/', methods=['GET'])
 def index():
