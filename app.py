@@ -28,7 +28,7 @@ CORS(app)
 @app.route('/predict', methods=['POST'])
 def check():
     data = (request.form)
-    data=data.to_dict()
+    print('The data is' ,data)
     first_key = list(data.keys())[0]
 
 
