@@ -28,6 +28,7 @@ CORS(app)
 @app.route('/predict', methods=['POST'])
 def check():
     data = (request.form)
+    data=data.to_dict()
     print('The input type is',type(data))
     print(data)
     text = data.get("text",None)
