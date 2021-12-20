@@ -28,10 +28,12 @@ CORS(app)
 @app.route('/predict', methods=['POST'])
 def check():
     data = (request.form)
-    data=data.to_dict()
-    print('The input type is',type(data))
-    print(data)
-    text = data.get("text",None)
+    first_key = list(data.keys())[0]
+
+    print(first_key)
+    text=data['first_key']
+    text=jsonify(text)['text']
+    print(text)
     if text == None:
         return jsonify({"message":"text not found"})
     else:
