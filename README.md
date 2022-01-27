@@ -28,6 +28,9 @@ or {"text": "klement gottwaldi surnukeha palsameeriti ning paigutati mausoleumi 
 
 ![](image.png)
 
+#### Deployed on Heroku
+at [Link](https://la-identification.herokuapp.com/predict)
+
 ##### To work on
 
 remove the hardcoded key value names
