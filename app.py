@@ -1,5 +1,5 @@
 import pickle
-from sklearn.feature_extraction.text import CountVectorizer
+
 from flask_cors import CORS
 
 # load the model
@@ -10,6 +10,7 @@ vectorizer = pickle.load(open('vectorizer.pickle', 'rb'))
 
 def preprocess(text):
     text = text.lower()
+
     return text
 
 # make a prediction
@@ -25,10 +26,10 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET','POST'])
 def check():
     data = json.loads(request.data)
-    
+
     text = data.get("text",None)
     if text is None:
         return jsonify({"message":"text not found"})
@@ -39,7 +40,7 @@ def check():
         ans=pred(text)
         return jsonify({"predicted ":ans})
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET','POST'])
 def index():
     return 'Machine Learning Inference'
 

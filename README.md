@@ -1,6 +1,6 @@
 # Language-detection-api
 This is for college mini project.
-The project is a langugae detection project that will predict the languagee of the given input string
+The project is a language detection project that will predict the language of the given input string
 
 The trained ML model is taken from https://github.com/tanvi355/project <br>
 - The model is serialized and deserialized using pickle
@@ -32,3 +32,5 @@ or {"text": "klement gottwaldi surnukeha palsameeriti ning paigutati mausoleumi 
 
 remove the hardcoded key value names
 
+#### Note
+The api has procfile and has imported gunicorn these were needed because we wanted to host it on heroku
