@@ -28,26 +28,37 @@ CORS(app)
 
 @app.route('/predict', methods=['GET','POST'])
 def check():
-    data = json.loads(request.data)
+    if request.method == 'POST':
+        data = (request.form.get('text'))
+        print(data)
 
-    text = data.get("text",None)
-    if text is None:
-        return jsonify({"message":"text not found"})
+        if data is None:
+            return jsonify({"message":"text not found"})
+        else:
+
+            text=preprocess(data)
+            text=[text]
+            ans=pred(text)
+            response=jsonify(
+
+                {
+                    "predicted": ans
+                }
+            )
+            return response
+
     else:
-
-        text=preprocess(text)
-        text=[text]
-        ans=pred(text)
-        return jsonify({"predicted ":ans})
+        return 'send the data through POST method'
 
 @app.route('/', methods=['GET','POST'])
 def index():
     return 'Machine Learning Inference'
 
 
+
 if __name__ == '__main__':
 
-    app.run(debug=True)
+    app.run(port='51',debug=True)
 
 
 
